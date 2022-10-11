@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Produtos Montáveis</string>
+    <string name="challenge">Desafios</string>
+    <string name="classroom">Sala de aula</string>
+    <string name="profile">Perfil</string>
+    <string name="profile_picture">Foto de perfil</string>
+    <string name="profile_name">Seu nome</string>
+    <string name="start">Iniciar</string>
+    <string name="progress_status">Progresso: %.1f%%%n </string>
+</resources>
