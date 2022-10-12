@@ -1,15 +1,12 @@
-package com.produtos.montaveis.adapter
+package com.produtos.montaveis.ui.challenges
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.produtos.montaveis.R
 import com.produtos.montaveis.databinding.ChallengeItemBinding
 import com.produtos.montaveis.model.Challenge
-import com.produtos.montaveis.model.getFormattedProgressStatus
 
 class ChallengeAdapter(val clickListener: ChallengeListener) :
     ListAdapter<Challenge, ChallengeAdapter.ChallengeViewHolder>(DiffCallback) {
@@ -19,7 +16,6 @@ class ChallengeAdapter(val clickListener: ChallengeListener) :
         fun bind(clickListener: ChallengeListener, challenge: Challenge) {
             binding.clickListener = clickListener
             binding.challenge = challenge
-            binding.progressStatus.text = challenge.getFormattedProgressStatus()
             binding.executePendingBindings()
         }
     }

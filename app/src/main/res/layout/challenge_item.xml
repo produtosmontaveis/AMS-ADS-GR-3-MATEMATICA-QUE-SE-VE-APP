@@ -15,7 +15,7 @@
         
         <variable
             name="clickListener"
-            type="com.produtos.montaveis.adapter.ChallengeListener" />
+            type="com.produtos.montaveis.ui.challenges.ChallengeListener" />
     </data>
 
 

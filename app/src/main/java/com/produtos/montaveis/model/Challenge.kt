@@ -3,12 +3,14 @@ package com.produtos.montaveis.model
 import java.text.NumberFormat
 
 data class Challenge(
-    val studentId: Int,
+    val studentId: StudentId,
     val formula: Formula,
-    val progressStatus: Double = 0.0,
+    val progressStatus: Double,
     val startDate: String? = null,
     val finishDate: String? = null
 )
+
+data class StudentId(val studentId: Long)
 
 fun Challenge.getFormattedProgressStatus(): String {
     val percentageFormat = NumberFormat.getPercentInstance()

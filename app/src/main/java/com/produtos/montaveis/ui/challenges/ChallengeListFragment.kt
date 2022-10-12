@@ -8,11 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
-import com.produtos.montaveis.adapter.ChallengeAdapter
-import com.produtos.montaveis.adapter.ChallengeListener
-import com.produtos.montaveis.data.ChallengeData.challenges
 import com.produtos.montaveis.databinding.FragmentChallengeListBinding
 
 private const val CHALLENGE_LIST_FRAGMENT = "ChallengeListFragment"

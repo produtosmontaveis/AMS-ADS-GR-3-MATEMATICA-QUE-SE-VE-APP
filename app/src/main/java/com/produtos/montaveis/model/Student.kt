@@ -1,7 +1,8 @@
 package com.produtos.montaveis.model
 
 data class Student(
-    val id: Int,
+    val id: Long,
     val name: String,
-    val level: Int
+    val level: Int,
+    val exercisesCompleted: Int
 )

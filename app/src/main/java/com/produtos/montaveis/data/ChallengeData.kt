@@ -2,39 +2,74 @@ package com.produtos.montaveis.data
 
 import com.produtos.montaveis.model.Challenge
 import com.produtos.montaveis.model.Formula
+import com.produtos.montaveis.model.StudentId
 
 object ChallengeData {
 
     val challenges: List<Challenge> = listOf(
         Challenge(
-            1,
-            Formula(1, "Quadrado da soma"),
+            StudentId(1),
+            Formula(
+                1,
+                "Quadrado da soma",
+                "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
+            ),
             75.0
         ),
         Challenge(
-            1,
-            Formula(2, "Quadrado da diferença"),
-        33.3
+            StudentId(1),
+            Formula(
+                1,
+                "Quadrado da soma",
+                "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
+            ),
+            33.3
         ),
         Challenge(
-            1,
-            Formula(3, "Diferença de quadrados")
+            StudentId(1),
+            Formula(
+                1,
+                "Quadrado da soma",
+                "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
+            ),
+            0.0
         ),
         Challenge(
-            1,
-            Formula(4, "Cubo da soma")
+            StudentId(1),
+            Formula(
+                1,
+                "Quadrado da soma",
+                "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
+            ),
+            0.0
         ),
         Challenge(
-            1,
-            Formula(5, "Soma de cubos")
+
+            StudentId(1),
+            Formula(
+                1,
+                "Quadrado da soma",
+                "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
+            ),
+            0.0
         ),
         Challenge(
-            1,
-            Formula(6, "Cubo da diferença")
+            StudentId(1),
+            Formula(
+                1,
+                "Quadrado da soma",
+                "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
+            ),
+            0.0
         ),
         Challenge(
-            1,
-            Formula(7, "Diferença de cubos")
+            StudentId(1),
+            Formula(
+                1,
+                "Quadrado da soma",
+                "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
+            ),
+            0.0
         ),
     )
 }
