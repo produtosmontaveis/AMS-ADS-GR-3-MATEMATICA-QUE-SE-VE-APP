@@ -2,13 +2,14 @@ package com.produtos.montaveis.ui.challenges
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.produtos.montaveis.databinding.FragmentChallengeListBinding
+import com.produtos.montaveis.model.Challenge
 
 private const val CHALLENGE_LIST_FRAGMENT = "ChallengeListFragment"
 
@@ -18,7 +19,7 @@ class ChallengeListFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val viewModel: ChallengeViewModel by activityViewModels()
+    private val viewModel: ChallengeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,12 +34,11 @@ class ChallengeListFragment : Fragment() {
 
         val adapter = ChallengeAdapter(ChallengeListener {
             viewModel.onChallengeClicked(it)
-//            redirectToGameActivity(it.formula.id)
-            Log.d(CHALLENGE_LIST_FRAGMENT, it.toString())
+//            redirectToGameActivity(it)
             Toast.makeText(requireContext(), it.formula.name, Toast.LENGTH_LONG).show()
         })
 
-        viewModel.challengeList.observe(viewLifecycleOwner) { challenges ->
+        viewModel.challenges.observe(viewLifecycleOwner) { challenges ->
             challenges.let { adapter.submitList(it) }
         }
 
@@ -46,12 +46,12 @@ class ChallengeListFragment : Fragment() {
     }
 
     /*
-    * Given the id of the formula, redirects to the corresponding challenge
+    * Given the challenge, it's possible to get the corresponding formula to build the game
     *
-    * @param { Int } formulaId
+    * @param { Challenge } challenge
     *
     */
-    private fun redirectToGameActivity(formulaId: Int) {
+    private fun redirectToGameActivity(challenge: Challenge) {
         TODO("Challenges not implemented yet")
         /* Possible implementation
             val intent = Intent(requireActivity(), GameActivity::class.java)
