@@ -1,4 +1,4 @@
-package com.produtos.montaveis.ui.challenges
+package com.produtos.montaveis.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

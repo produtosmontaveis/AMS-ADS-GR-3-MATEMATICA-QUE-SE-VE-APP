@@ -1,15 +1,18 @@
 package com.produtos.montaveis.ui.challenges
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.produtos.montaveis.R
 import com.produtos.montaveis.databinding.FragmentChallengeListBinding
 import com.produtos.montaveis.model.Challenge
+import com.produtos.montaveis.model.ChallengeViewModel
 
 private const val CHALLENGE_LIST_FRAGMENT = "ChallengeListFragment"
 
@@ -19,7 +22,7 @@ class ChallengeListFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val viewModel: ChallengeViewModel by viewModels()
+    private val viewModel: ChallengeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +37,7 @@ class ChallengeListFragment : Fragment() {
 
         val adapter = ChallengeAdapter(ChallengeListener {
             viewModel.onChallengeClicked(it)
+            findNavController().navigate(R.id.action_challengeListFragment_to_challengeDetailFragment)
 //            redirectToGameActivity(it)
             Toast.makeText(requireContext(), it.formula.name, Toast.LENGTH_LONG).show()
         })

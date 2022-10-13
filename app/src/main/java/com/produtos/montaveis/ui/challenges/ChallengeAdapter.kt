@@ -33,6 +33,7 @@ class ChallengeAdapter(val clickListener: ChallengeListener) :
     override fun onBindViewHolder(holder: ChallengeViewHolder, position: Int) {
         val challenge = getItem(position)
         holder.bind(clickListener, challenge)
+
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Challenge>() {
