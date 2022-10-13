@@ -24,10 +24,12 @@ class ChallengeViewModel : ViewModel() {
     private fun getChallengeData() {
         viewModelScope.launch {
             try {
-                _challenges.value = ChallengeApi.retrofitService.getChallenges(1)
+                // Saving http requests from the server with some pre-populated data
+                // _challenges.value = ChallengeApi.retrofitService.getChallenges(1)
+                _challenges.value = ChallengeData.challenges
             } catch (e: Exception) {
                 println(e.message)
-                _challenges.value = ChallengeData.challenges
+                _challenges.value = listOf()
             }
         }
     }

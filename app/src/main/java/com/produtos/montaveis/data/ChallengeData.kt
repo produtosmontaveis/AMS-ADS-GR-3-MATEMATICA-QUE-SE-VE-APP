@@ -2,6 +2,7 @@ package com.produtos.montaveis.data
 
 import com.produtos.montaveis.model.Challenge
 import com.produtos.montaveis.model.Formula
+import com.produtos.montaveis.model.Student
 import com.produtos.montaveis.model.StudentId
 
 object ChallengeData {
@@ -72,4 +73,6 @@ object ChallengeData {
             0.0
         ),
     )
+
+    val student = Student(1, "Gustavo", 2, 40)
 }
