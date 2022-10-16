@@ -49,6 +49,11 @@ class ChallengeListFragment : Fragment() {
         binding.recyclerView.adapter = adapter
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     /*
     * Given the challenge, it's possible to get the corresponding formula to build the game
     *

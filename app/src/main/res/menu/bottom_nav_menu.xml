@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/challengeListFragment"
+    <item android:id="@+id/challenge_graph"
         android:enabled="true"
         android:icon="@drawable/icon_home"
         android:title="@string/challenge" />

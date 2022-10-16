@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/challenge_graph"
+    app:startDestination="@id/challengeListFragment">
+
+    <fragment
+        android:id="@+id/challengeDetailFragment"
+        android:name="com.produtos.montaveis.ui.challenges.ChallengeDetailFragment"
+        android:label="ChallengeDetailFragment" />
+    <fragment
+        android:id="@+id/challengeListFragment"
+        android:name="com.produtos.montaveis.ui.challenges.ChallengeListFragment"
+        android:label="fragment_challenge_list"
+        tools:layout="@layout/fragment_challenge_list" >
+        <action
+            android:id="@+id/action_challengeListFragment_to_challengeDetailFragment"
+            app:destination="@id/challengeDetailFragment" />
+    </fragment>
+</navigation>
