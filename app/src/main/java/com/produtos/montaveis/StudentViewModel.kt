@@ -1,29 +1,44 @@
-package com.produtos.montaveis.ui.profile
+package com.produtos.montaveis.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.produtos.montaveis.data.ChallengeData
+import com.produtos.montaveis.model.Challenge
 import com.produtos.montaveis.model.Student
+import com.produtos.montaveis.network.StudentApi
 import kotlinx.coroutines.launch
 
-class ProfileViewModel : ViewModel() {
+class StudentViewModel : ViewModel() {
 
     private val _student = MutableLiveData<Student>()
     val student: LiveData<Student> = _student
+
+    private val _challenges = MutableLiveData<List<Challenge>>()
+    val challenges: LiveData<List<Challenge>> = _challenges
+
+    private val _challenge = MutableLiveData<Challenge>()
+    val challenge: LiveData<Challenge> = _challenge
 
     private val _studentBadge = MutableLiveData<String>()
     val studentStatus: LiveData<String> = _studentBadge
 
     init {
-        getStudentProfile()
+        getStudent()
         determineStudentBadge()
     }
 
-    private fun getStudentProfile() {
+    fun onChallengeClicked(challenge: Challenge) {
+        _challenge.value = challenge
+    }
+
+    private fun getStudent() {
         viewModelScope.launch {
-            _student.value = ChallengeData.student
+            try {
+                _student.value = StudentApi.retrofitService.getStudent(1)
+            } catch (_: Exception) {
+
+            }
         }
     }
 
