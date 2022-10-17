@@ -3,11 +3,9 @@ package com.produtos.montaveis
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.model.Challenge
 import com.produtos.montaveis.model.Student
-import com.produtos.montaveis.network.StudentApi
-import kotlinx.coroutines.launch
 
 class StudentViewModel : ViewModel() {
 
@@ -33,17 +31,19 @@ class StudentViewModel : ViewModel() {
     }
 
     private fun getStudent() {
+        _student.value = MockData.student
+        _student.value?.challenges.also {
+            _challenges.value = it
+        }
+        /* Saving http requests
         viewModelScope.launch {
             try {
-//                _student.value = MockData.student
                 _student.value = StudentApi.retrofitService.getStudent(1)
                 _student.value?.challenges.also {
                     _challenges.value = it
                 }
-            } catch (_: Exception) {
-
-            }
-        }
+            } catch (_: Exception) {}
+        }*/
     }
 
     private fun determineStudentBadge() {

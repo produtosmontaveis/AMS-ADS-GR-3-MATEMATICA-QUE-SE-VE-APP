@@ -15,6 +15,7 @@ class ChallengeAdapter(private val clickListener: ChallengeListener) :
 
     class ChallengeViewHolder(private var binding: ChallengeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        val formula = binding.challengeName
         val startChallengeButton = binding.startButton
         fun bind(clickListener: ChallengeListener, challenge: Challenge) {
             binding.clickListener = clickListener
@@ -39,7 +40,7 @@ class ChallengeAdapter(private val clickListener: ChallengeListener) :
         holder.startChallengeButton.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, GameActivity::class.java)
-            intent.putExtra(GameActivity.FORMULA_ID, challenge.formula.id)
+            intent.putExtra(GameActivity.FORMULA_NAME, holder.formula.text)
             context.startActivity(intent)
         }
     }
