@@ -47,7 +47,6 @@ class ChallengeAdapter(private val clickListener: ChallengeListener) :
     companion object DiffCallback : DiffUtil.ItemCallback<Challenge>() {
         override fun areItemsTheSame(oldItem: Challenge, newItem: Challenge): Boolean {
             return oldItem.formula.id == newItem.formula.id
-                    && oldItem.studentId == newItem.studentId
         }
 
         override fun areContentsTheSame(oldItem: Challenge, newItem: Challenge): Boolean {

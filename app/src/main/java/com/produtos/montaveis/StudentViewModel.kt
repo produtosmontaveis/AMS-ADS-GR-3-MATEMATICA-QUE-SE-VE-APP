@@ -1,4 +1,4 @@
-package com.produtos.montaveis.ui
+package com.produtos.montaveis
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -35,7 +35,11 @@ class StudentViewModel : ViewModel() {
     private fun getStudent() {
         viewModelScope.launch {
             try {
+//                _student.value = MockData.student
                 _student.value = StudentApi.retrofitService.getStudent(1)
+                _student.value?.challenges.also {
+                    _challenges.value = it
+                }
             } catch (_: Exception) {
 
             }

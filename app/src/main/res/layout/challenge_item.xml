@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.produtos.montaveis.model.ChallengeViewModel" />
+            type="com.produtos.montaveis.StudentViewModel" />
         
         <variable
             name="clickListener"

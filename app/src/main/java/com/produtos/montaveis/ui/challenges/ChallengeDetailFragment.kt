@@ -1,16 +1,13 @@
 package com.produtos.montaveis.ui.challenges
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.produtos.montaveis.R
+import com.produtos.montaveis.StudentViewModel
 import com.produtos.montaveis.databinding.FragmentChallengeDetailBinding
-import com.produtos.montaveis.databinding.FragmentChallengeListBinding
-import com.produtos.montaveis.databinding.FragmentProfileBinding
-import com.produtos.montaveis.model.ChallengeViewModel
 
 class ChallengeDetailFragment : Fragment() {
 
@@ -19,7 +16,7 @@ class ChallengeDetailFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val viewModel: ChallengeViewModel by activityViewModels()
+    private val viewModel: StudentViewModel by activityViewModels()
 
 
     override fun onCreateView(
