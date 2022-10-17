@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="profile_img">75dp</dimen>
+    <dimen name="profile_img">80dp</dimen>
 </resources>

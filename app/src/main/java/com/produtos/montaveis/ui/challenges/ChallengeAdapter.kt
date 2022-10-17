@@ -10,7 +10,7 @@ import com.produtos.montaveis.GameActivity
 import com.produtos.montaveis.databinding.ChallengeItemBinding
 import com.produtos.montaveis.model.Challenge
 
-class ChallengeAdapter(val clickListener: ChallengeListener) :
+class ChallengeAdapter(private val clickListener: ChallengeListener) :
     ListAdapter<Challenge, ChallengeAdapter.ChallengeViewHolder>(DiffCallback) {
 
     class ChallengeViewHolder(private var binding: ChallengeItemBinding) :

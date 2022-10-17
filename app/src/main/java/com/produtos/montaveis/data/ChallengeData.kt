@@ -21,7 +21,7 @@ object ChallengeData {
             StudentId(1),
             Formula(
                 1,
-                "Quadrado da soma",
+                "Quadrado da diferença",
                 "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             33.3
@@ -30,7 +30,7 @@ object ChallengeData {
             StudentId(1),
             Formula(
                 1,
-                "Quadrado da soma",
+                "Diferença de quadrados",
                 "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             0.0
@@ -39,7 +39,7 @@ object ChallengeData {
             StudentId(1),
             Formula(
                 1,
-                "Quadrado da soma",
+                "Cubo da soma",
                 "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             0.0
@@ -49,7 +49,7 @@ object ChallengeData {
             StudentId(1),
             Formula(
                 1,
-                "Quadrado da soma",
+                "Soma de cubos",
                 "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             0.0
@@ -58,7 +58,7 @@ object ChallengeData {
             StudentId(1),
             Formula(
                 1,
-                "Quadrado da soma",
+                "Cubo da diferença",
                 "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             0.0
@@ -67,7 +67,7 @@ object ChallengeData {
             StudentId(1),
             Formula(
                 1,
-                "Quadrado da soma",
+                "Diferença de cubos",
                 "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             0.0

@@ -6,12 +6,11 @@
     <string name="profile_picture">Foto de perfil</string>
     <string name="profile_name">Seu nome</string>
     <string name="start">Iniciar</string>
-    <string name="progress_status">Progresso: %.0f</string>
+    <string name="progress_status">Progresso: %.0f%%</string>
     <string name="learning">Aprendizado</string>
     <plurals name="challenges_completed">
         <item quantity="one">%d exercício concluído</item>
         <item quantity="other">%d exercícios concluídos</item>
     </plurals>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="student_status">%s, %d lv</string>
 </resources>
