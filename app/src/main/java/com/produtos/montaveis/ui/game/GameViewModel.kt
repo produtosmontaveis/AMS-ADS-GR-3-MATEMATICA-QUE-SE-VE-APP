@@ -16,19 +16,7 @@ class GameViewModel : ViewModel() {
     private val _responseBody = MutableLiveData<String>()
     val responseBody: LiveData<String> = _responseBody
 
-    fun getResponseBody(formulaName: String) {
-        val formulaId = when(formulaName) {
-            "Quadrado da soma" -> 1
-            "Quadrado da diferença" -> 2
-            "Diferença de quadrados" -> 3
-            "Cubo da soma" -> 4
-            "Soma de cubos" -> 5
-            "Cubo da diferença" -> 6
-            else -> {
-                7
-            }
-        }
-
+    fun getResponseBody(formulaId: Int) {
         viewModelScope.launch {
             try {
                 FormulaApi.retrofitService.getFormula(formulaId)
