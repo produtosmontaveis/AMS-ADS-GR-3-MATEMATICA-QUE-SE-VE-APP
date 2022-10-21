@@ -8,11 +8,11 @@
     <fragment
         android:id="@+id/challengeDetailFragment"
         android:name="com.produtos.montaveis.ui.challenges.ChallengeDetailFragment"
-        android:label="ChallengeDetailFragment" />
+        android:label="Desafio" />
     <fragment
         android:id="@+id/challengeListFragment"
         android:name="com.produtos.montaveis.ui.challenges.ChallengeListFragment"
-        android:label="fragment_challenge_list"
+        android:label="Desafios"
         tools:layout="@layout/fragment_challenge_list" >
         <action
             android:id="@+id/action_challengeListFragment_to_challengeDetailFragment"

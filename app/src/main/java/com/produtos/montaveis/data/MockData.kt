@@ -73,7 +73,7 @@ object MockData {
                     "Quadrado da soma",
                     "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
                 ),
-                75.0
+                0.0
             ),
             Challenge(
                 Formula(
@@ -81,7 +81,7 @@ object MockData {
                     "Quadrado da diferença",
                     "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
                 ),
-                33.3
+                0.0
             ),
             Challenge(
                 Formula(
