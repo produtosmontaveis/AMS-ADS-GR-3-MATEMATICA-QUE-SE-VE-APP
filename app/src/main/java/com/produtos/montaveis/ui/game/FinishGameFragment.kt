@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.produtos.montaveis.databinding.FragmentFinishGameBinding
 
 class FinishGameFragment : Fragment() {
@@ -12,6 +13,8 @@ class FinishGameFragment : Fragment() {
     private var _binding: FragmentFinishGameBinding? = null
 
     private val binding get() = _binding!!
+
+    private val viewModel: GameViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +26,8 @@ class FinishGameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.button2.setOnClickListener { requireActivity().finish() }
+        binding.button2.setOnClickListener {
+            viewModel.finishChallenge()
+            requireActivity().finish() }
     }
 }

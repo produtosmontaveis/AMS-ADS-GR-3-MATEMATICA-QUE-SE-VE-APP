@@ -53,7 +53,7 @@ class StudentViewModel : ViewModel() {
             3 -> "Dedicado"
             4 -> "Experiente"
             5 -> "Talentoso"
-            else -> "Proeficiente"
+            else -> "Novato"
         }
     }
 }

@@ -16,4 +16,5 @@
     <string name="a_quadrado">a<sup><small>2</small></sup></string>
     <string name="b_quadrado">b<sup><small>2</small></sup></string>
     <string name="return_label">Voltar</string>
+    <string name="level">%d</string>
 </resources>

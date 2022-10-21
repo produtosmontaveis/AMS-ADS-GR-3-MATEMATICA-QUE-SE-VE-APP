@@ -24,11 +24,11 @@
                 android:id="@+id/cv_profile_img"
                 android:layout_width="@dimen/profile_img"
                 android:layout_height="@dimen/profile_img"
+                android:layout_marginTop="16dp"
                 app:cardCornerRadius="@dimen/profile_img"
-                app:layout_constraintBottom_toBottomOf="@+id/stud_progress_bar"
-                app:layout_constraintEnd_toEndOf="@+id/stud_progress_bar"
-                app:layout_constraintStart_toStartOf="@+id/stud_progress_bar"
-                app:layout_constraintTop_toTopOf="@+id/stud_progress_bar">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/profile_img"
@@ -41,16 +41,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <ProgressBar
-                android:id="@+id/stud_progress_bar"
-                android:layout_width="128dp"
-                android:layout_height="128dp"
-                android:indeterminateOnly="false"
-                android:progressDrawable="@drawable/circular_progress_indicator"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:progress="40" />
 
             <TextView
                 android:id="@+id/tv_student_name"
@@ -60,8 +50,8 @@
                 android:text="@{viewModel.student.name}"
                 app:layout_constraintEnd_toEndOf="@+id/cv_profile_img"
                 app:layout_constraintStart_toStartOf="@+id/cv_profile_img"
-                app:layout_constraintTop_toBottomOf="@+id/stud_progress_bar"
-                tools:text="@string/profile_name" />
+                app:layout_constraintTop_toBottomOf="@+id/cv_profile_img"
+                tools:text="Gustavo" />
 
             <TextView
                 android:id="@+id/tv_student_nick"
@@ -73,7 +63,32 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_student_name"
                 app:layout_constraintStart_toEndOf="@+id/cv_profile_img"
                 app:layout_constraintStart_toStartOf="@+id/tv_student_name"
-                app:layout_constraintTop_toBottomOf="@+id/tv_student_name" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_student_name"
+                tools:text="Aprendiz, 4 lv" />
+
+
+            <ProgressBar
+                android:id="@+id/stud_progress_bar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/circular_progress_indicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/learning_label"
+                tools:progress="40" />
+
+            <TextView
+                android:id="@+id/student_level"
+                style="@style/TextAppearance.MaterialComponents.Headline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/level(viewModel.student.level)}"
+                app:layout_constraintBottom_toBottomOf="@+id/stud_progress_bar"
+                app:layout_constraintEnd_toEndOf="@+id/stud_progress_bar"
+                app:layout_constraintStart_toStartOf="@+id/stud_progress_bar"
+                app:layout_constraintTop_toTopOf="@+id/stud_progress_bar"
+                tools:text="0"/>
 
             <TextView
                 android:id="@+id/learning_label"
@@ -90,13 +105,13 @@
                 android:id="@+id/badges_recycler_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="8dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/learning_label"
+                app:layout_constraintTop_toBottomOf="@+id/stud_progress_bar"
+                app:spanCount="4"
                 tools:itemCount="7"
                 tools:listitem="@layout/badges_item" />
 

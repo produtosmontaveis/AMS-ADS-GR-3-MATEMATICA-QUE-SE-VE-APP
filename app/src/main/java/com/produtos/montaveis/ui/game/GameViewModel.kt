@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.model.Challenge
 import com.produtos.montaveis.network.FormulaApi
 import kotlinx.coroutines.launch
@@ -49,5 +50,12 @@ class GameViewModel : ViewModel() {
 
     fun updateChallenge() {
         _challengeProgressStatus.value = _challengeProgressStatus.value?.plus(25.0)
+    }
+
+    fun finishChallenge() {
+        MockData.student.apply {
+            level = 1
+        }.challenges[0].progressStatus = _challengeProgressStatus.value
+
     }
 }
