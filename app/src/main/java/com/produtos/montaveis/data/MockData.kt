@@ -14,7 +14,7 @@ object MockData {
                     "Quadrado da soma",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Quadrado%20soma.png"
                 ),
-                100.0
+                0.0
             ),
             Challenge(
                 Formula(

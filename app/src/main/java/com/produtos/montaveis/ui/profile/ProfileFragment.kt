@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import com.produtos.montaveis.StudentViewModel
+import androidx.fragment.app.viewModels
 import com.produtos.montaveis.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -15,7 +14,7 @@ class ProfileFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val viewModel: StudentViewModel by activityViewModels()
+    private val viewModel: StudentViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

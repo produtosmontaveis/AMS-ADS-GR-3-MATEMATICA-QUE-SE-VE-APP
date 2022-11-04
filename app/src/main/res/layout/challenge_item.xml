@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.produtos.montaveis.StudentViewModel" />
+            type="com.produtos.montaveis.ui.profile.StudentViewModel" />
         
         <variable
             name="clickListener"

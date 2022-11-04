@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.produtos.montaveis.GameActivity
 import com.produtos.montaveis.databinding.FragmentGameResponseBinding
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class GameResponseFragment : Fragment() {
 
@@ -24,7 +26,7 @@ class GameResponseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         formulaId = requireArguments().getInt(GameActivity.FORMULA_ID)
-        _binding = FragmentGameResponseBinding.inflate(inflater, container, false)
+        _binding = com.produtos.montaveis.databinding.FragmentGameResponseBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -34,7 +36,13 @@ class GameResponseFragment : Fragment() {
         viewModel.getResponseBody(formulaId)
         viewModel.responseBody.observe(viewLifecycleOwner) {
             binding.responseText.text = it
+            val pattern: Pattern = Pattern.compile("([^\"]*)")
+
+            val matcher: Matcher = pattern.matcher(it.substring(16, 40))
+
+            requireActivity().title = (if (matcher.find()) matcher.group(1) else TODO()).toString()
         }
+
     }
 
     override fun onDestroyView() {

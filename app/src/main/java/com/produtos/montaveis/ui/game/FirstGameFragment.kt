@@ -124,7 +124,6 @@ class FirstGameFragment : Fragment() {
                 }
             }
         }
-        requireActivity().title = "Quadrado da soma"
     }
     override fun onDestroyView() {
         super.onDestroyView()

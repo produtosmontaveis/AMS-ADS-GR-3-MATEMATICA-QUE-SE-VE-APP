@@ -8,10 +8,6 @@ import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.model.Challenge
 import com.produtos.montaveis.network.FormulaApi
 import kotlinx.coroutines.launch
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class GameViewModel : ViewModel() {
 
@@ -31,20 +27,10 @@ class GameViewModel : ViewModel() {
     fun getResponseBody(formulaId: Int) {
         viewModelScope.launch {
             try {
-                FormulaApi.retrofitService.getFormula(formulaId)
-                    .enqueue(object: Callback<ResponseBody> {
-                        override fun onResponse(
-                            call: Call<ResponseBody>,
-                            response: Response<ResponseBody>
-                        ) {
-                            _responseBody.value = response.body()?.string()
-                        }
-
-                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        }
-
-                    })
-            } catch (_:Exception) { }
+                _responseBody.value = FormulaApi.retrofitService.getFormula(formulaId)
+            } catch (e :Exception) {
+                _responseBody.value = e.message
+            }
         }
     }
 
