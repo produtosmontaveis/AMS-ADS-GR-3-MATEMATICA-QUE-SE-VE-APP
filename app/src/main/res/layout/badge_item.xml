@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="badge"
+            type="com.produtos.montaveis.model.Badge" />
+    </data>
+
+    <ImageView
+        android:id="@+id/badge_img"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/profile_img"
+        android:layout_margin="4dp"
+        android:adjustViewBounds="true"
+        android:alpha="@{badge.enabled ? 250 : 50}"
+        android:contentDescription="@{badge.name}"
+        android:scaleType="centerCrop"
+        app:imageUrl="@{badge.imgUrl}" />
+
+</layout>

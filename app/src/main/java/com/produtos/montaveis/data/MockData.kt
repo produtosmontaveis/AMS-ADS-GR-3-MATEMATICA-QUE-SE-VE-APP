@@ -14,7 +14,8 @@ object MockData {
                     "Quadrado da soma",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Quadrado%20soma.png"
                 ),
-                0.0
+                0.0,
+                badgeUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             Challenge(
                 Formula(
@@ -22,7 +23,8 @@ object MockData {
                     "Quadrado da diferença",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Quadrado%20da%20diferen%C3%A7a.png"
                 ),
-                0.0
+                100.0,
+                        badgeUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             Challenge(
                 Formula(
@@ -30,7 +32,8 @@ object MockData {
                     "Diferença de quadrados",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Diferen%C3%A7a%20de%20quadrados.png"
                 ),
-                0.0
+                0.0,
+                        badgeUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             Challenge(
                 Formula(
@@ -38,7 +41,8 @@ object MockData {
                     "Cubo da soma",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Cubo%20da%20soma.png"
                 ),
-                0.0
+                0.0,
+                badgeUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             Challenge(
                 Formula(
@@ -46,7 +50,8 @@ object MockData {
                     "Soma de cubos",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Soma%20de%20cubos.png"
                 ),
-                0.0
+                0.0,
+                badgeUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             Challenge(
                 Formula(
@@ -54,7 +59,8 @@ object MockData {
                     "Cubo da diferença",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Cubo%20da%20diferen%C3%A7a.png"
                 ),
-                0.0
+                0.0,
+                badgeUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             ),
             Challenge(
                 Formula(
@@ -62,7 +68,8 @@ object MockData {
                     "Diferença de cubos",
                     "https://raw.githubusercontent.com/produtosmontaveis/AMS-ADS-GR-3-DOC/main/assets/models/Diferen%C3%A7a%20de%20cubos.png"
                 ),
-                0.0
+                0.0,
+                badgeUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
             )
         )
     )

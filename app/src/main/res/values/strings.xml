@@ -17,4 +17,11 @@
     <string name="b_quadrado">b<sup><small>2</small></sup></string>
     <string name="return_label">Voltar</string>
     <string name="level">%d</string>
+    <string name="badge1">Quadrado da soma</string>
+    <string name="badge2">Quadrado da diferença</string>
+    <string name="badge3">Diferença de quadrados</string>
+    <string name="badge4">Cubo da soma</string>
+    <string name="badge5">Soma de cubos</string>
+    <string name="badge6">Cubo da diferença</string>
+    <string name="badge7">Diferença de cubos</string>
 </resources>
