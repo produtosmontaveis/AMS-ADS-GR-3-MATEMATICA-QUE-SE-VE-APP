@@ -1,16 +1,14 @@
 package com.produtos.montaveis.ui.challenges
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
-import com.produtos.montaveis.R
+import com.produtos.montaveis.GameActivity
 import com.produtos.montaveis.databinding.FragmentChallengeListBinding
-
-private const val CHALLENGE_LIST_FRAGMENT = "ChallengeListFragment"
 
 class ChallengeListFragment : Fragment() {
 
@@ -34,8 +32,10 @@ class ChallengeListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = ChallengeAdapter(ChallengeListener {
-            viewModel.onChallengeClicked(it)
-            findNavController().navigate(R.id.action_challengeListFragment_to_challengeDetailFragment)
+            viewModel.startChallenge(it)
+            val intent = Intent(requireActivity(), GameActivity::class.java)
+            intent.putExtra(GameActivity.FORMULA_NAME, it.formula.name)
+            requireActivity().startActivity(intent)
         })
 
         viewModel.challenges.observe(viewLifecycleOwner) { challenges ->

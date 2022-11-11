@@ -35,6 +35,7 @@ class FirstGameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getChallenge(1)
 
         binding.viewAQuadrado.setOnLongClickListener {
             val aQuadrado = "A ao quadrado"

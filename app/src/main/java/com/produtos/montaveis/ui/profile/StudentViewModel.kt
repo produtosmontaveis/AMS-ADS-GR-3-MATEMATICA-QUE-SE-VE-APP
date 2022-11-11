@@ -3,9 +3,11 @@ package com.produtos.montaveis.ui.profile
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.produtos.montaveis.data.MockData
+import androidx.lifecycle.viewModelScope
 import com.produtos.montaveis.model.Badge
 import com.produtos.montaveis.model.Student
+import com.produtos.montaveis.network.StudentApi
+import kotlinx.coroutines.launch
 
 class StudentViewModel : ViewModel() {
 
@@ -24,17 +26,11 @@ class StudentViewModel : ViewModel() {
     }
 
     private fun getStudent() {
-        try {
-            _student.value = MockData.student
-
-        } catch (_: Exception) {
-        }
-        /* Saving http requests
         viewModelScope.launch {
             try {
                 _student.value = StudentApi.retrofitService.getStudent(1)
             } catch (_: Exception) {}
-        }*/
+        }
     }
 
     fun updateBadges() {
@@ -44,7 +40,7 @@ class StudentViewModel : ViewModel() {
             badgesList.add(
                 Badge(
                     it.formula.name,
-                    it.badgeUrl,
+                    it.formula.badgeImageUrl,
                     it.progressStatus == 100.0
                 )
             )
@@ -54,12 +50,13 @@ class StudentViewModel : ViewModel() {
 
     private fun determineStudentRank() {
         _rank.value = when (_student.value?.level) {
-            1 -> "Novato"
-            2 -> "Aprendiz"
-            3 -> "Dedicado"
-            4 -> "Experiente"
-            5 -> "Talentoso"
-            else -> "Novato"
+            0 -> "Novato"
+            1 -> "Aprendiz"
+            2 -> "Dedicado"
+            3 -> "Experiente"
+            4 -> "Talentoso"
+            5 -> "Proeficiente"
+            else -> "Mestre"
         }
     }
 }

@@ -10,10 +10,6 @@
             type="com.produtos.montaveis.model.Challenge" />
 
         <variable
-            name="viewModel"
-            type="com.produtos.montaveis.ui.profile.StudentViewModel" />
-        
-        <variable
             name="clickListener"
             type="com.produtos.montaveis.ui.challenges.ChallengeListener" />
     </data>
@@ -23,8 +19,7 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:onClick="@{() -> clickListener.onClick(challenge)}">
+        android:layout_margin="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -48,7 +43,6 @@
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@{challenge.startDate}"
                 android:scaleType="fitCenter"
                 android:src="@drawable/icon_learn"
                 imageUrl="@{challenge.formula.imgUrl}"

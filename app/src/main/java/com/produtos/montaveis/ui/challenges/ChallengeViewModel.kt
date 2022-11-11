@@ -1,12 +1,15 @@
 package com.produtos.montaveis.ui.challenges
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.model.Challenge
+import com.produtos.montaveis.network.ChallengeApi
 import kotlinx.coroutines.launch
+
+private const val TAG = "ChallengeViewModel"
 
 class ChallengeViewModel : ViewModel() {
 
@@ -27,10 +30,22 @@ class ChallengeViewModel : ViewModel() {
     private fun getChallenges() {
         viewModelScope.launch {
             try {
-                _challenges.value = MockData.student.challenges
-//                _challenges.value = ChallengeApi.retrofitService.getChallenges()
-            } catch (_: Exception) {}
+                _challenges.value = ChallengeApi.retrofitService.getChallenges()
+            } catch (e: Exception) {
+                Log.d(TAG, e.message.toString())
+            }
         }
     }
 
+    fun startChallenge(challenge: Challenge) {
+        onChallengeClicked(challenge)
+
+        viewModelScope.launch {
+            try {
+                if (challenge.startDateTime == null) {
+                    ChallengeApi.retrofitService.startChallenge(challenge.formula.id)
+                }
+            } catch (_: Exception) {}
+        }
+    }
 }

@@ -12,7 +12,7 @@
         <item quantity="one">%d exercício concluído</item>
         <item quantity="other">%d exercícios concluídos</item>
     </plurals>
-    <string name="student_status">%s, %d lv</string>
+    <string name="student_status">%s, %d points</string>
     <string name="a_quadrado">a<sup><small>2</small></sup></string>
     <string name="b_quadrado">b<sup><small>2</small></sup></string>
     <string name="return_label">Voltar</string>

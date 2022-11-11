@@ -5,5 +5,5 @@ data class Student(
     val name: String,
     var level: Int,
     val score: Int,
-    val challenges: List<Challenge>
+    val challenges: List<Challenge>?
 )

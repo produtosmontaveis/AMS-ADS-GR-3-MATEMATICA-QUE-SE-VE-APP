@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.model.Challenge
+import com.produtos.montaveis.network.ChallengeApi
 import com.produtos.montaveis.network.FormulaApi
 import kotlinx.coroutines.launch
 
@@ -28,9 +28,17 @@ class GameViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 _responseBody.value = FormulaApi.retrofitService.getFormula(formulaId)
-            } catch (e :Exception) {
+            } catch (e: Exception) {
                 _responseBody.value = e.message
             }
+        }
+    }
+
+    fun getChallenge(formulaId: Int) {
+        viewModelScope.launch {
+            try {
+                _challenge.value = ChallengeApi.retrofitService.getChallenge(formulaId)
+            } catch (_: Exception) {}
         }
     }
 
@@ -39,9 +47,12 @@ class GameViewModel : ViewModel() {
     }
 
     fun finishChallenge() {
-        MockData.student.apply {
-            level = 1
-        }.challenges[0].progressStatus = _challengeProgressStatus.value
-
+        viewModelScope.launch {
+            try {
+                _challenge.value?.formula?.id?.let { formulaId ->
+                    ChallengeApi.retrofitService.finishChallenge(formulaId)
+                }
+            } catch (_: Exception) {}
+        }
     }
 }

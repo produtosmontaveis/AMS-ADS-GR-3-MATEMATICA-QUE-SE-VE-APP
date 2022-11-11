@@ -26,7 +26,7 @@ class GameResponseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         formulaId = requireArguments().getInt(GameActivity.FORMULA_ID)
-        _binding = com.produtos.montaveis.databinding.FragmentGameResponseBinding.inflate(inflater, container, false)
+        _binding = FragmentGameResponseBinding.inflate(inflater, container, false)
         return binding.root
     }
 

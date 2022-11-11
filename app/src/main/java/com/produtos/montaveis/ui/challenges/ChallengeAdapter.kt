@@ -1,12 +1,10 @@
 package com.produtos.montaveis.ui.challenges
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.produtos.montaveis.GameActivity
 import com.produtos.montaveis.databinding.ChallengeItemBinding
 import com.produtos.montaveis.model.Challenge
 
@@ -16,7 +14,6 @@ class ChallengeAdapter(private val clickListener: ChallengeListener) :
     class ChallengeViewHolder(private var binding: ChallengeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val formula = binding.challengeName
-        val startChallengeButton = binding.startButton
         fun bind(clickListener: ChallengeListener, challenge: Challenge) {
             binding.clickListener = clickListener
             binding.challenge = challenge
@@ -37,12 +34,6 @@ class ChallengeAdapter(private val clickListener: ChallengeListener) :
     override fun onBindViewHolder(holder: ChallengeViewHolder, position: Int) {
         val challenge = getItem(position)
         holder.bind(clickListener, challenge)
-        holder.startChallengeButton.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, GameActivity::class.java)
-            intent.putExtra(GameActivity.FORMULA_NAME, holder.formula.text)
-            context.startActivity(intent)
-        }
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Challenge>() {
