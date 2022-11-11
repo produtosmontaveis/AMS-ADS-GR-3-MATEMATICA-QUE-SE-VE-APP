@@ -23,8 +23,10 @@ class ChallengeViewModel : ViewModel() {
         getChallenges()
     }
 
-    fun onChallengeClicked(challenge: Challenge) {
-        _challenge.value = challenge
+    fun getChallenge(formulaId: Int) {
+        _challenge.value = _challenges.value?.find {
+            it.formula.id == formulaId
+        }
     }
 
     private fun getChallenges() {
@@ -38,7 +40,7 @@ class ChallengeViewModel : ViewModel() {
     }
 
     fun startChallenge(challenge: Challenge) {
-        onChallengeClicked(challenge)
+        _challenge.value = challenge
 
         viewModelScope.launch {
             try {

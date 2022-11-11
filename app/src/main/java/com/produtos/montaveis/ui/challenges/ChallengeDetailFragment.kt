@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.produtos.montaveis.databinding.FragmentChallengeDetailBinding
+import com.produtos.montaveis.model.Challenge
 
 class ChallengeDetailFragment : Fragment() {
-
 
     private var _binding: FragmentChallengeDetailBinding? = null
 
@@ -17,6 +17,16 @@ class ChallengeDetailFragment : Fragment() {
 
     private val viewModel: ChallengeViewModel by activityViewModels()
 
+    private lateinit var challenge: Challenge
+
+    private var formulaId: Int = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            formulaId = it.getInt("formulaId")
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +36,11 @@ class ChallengeDetailFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getChallenge(formulaId)
     }
 
     override fun onDestroyView() {

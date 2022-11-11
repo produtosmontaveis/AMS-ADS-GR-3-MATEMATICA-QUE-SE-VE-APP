@@ -2,6 +2,7 @@ package com.produtos.montaveis.ui.challenges
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -34,6 +35,11 @@ class ChallengeAdapter(private val clickListener: ChallengeListener) :
     override fun onBindViewHolder(holder: ChallengeViewHolder, position: Int) {
         val challenge = getItem(position)
         holder.bind(clickListener, challenge)
+        holder.itemView.setOnClickListener {
+            val action = ChallengeListFragmentDirections
+                .actionChallengeListFragmentToChallengeDetailFragment(formulaId = challenge.formula.id)
+                holder.itemView.findNavController().navigate(action)
+        }
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Challenge>() {

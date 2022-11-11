@@ -9,7 +9,11 @@
         android:id="@+id/challengeDetailFragment"
         android:name="com.produtos.montaveis.ui.challenges.ChallengeDetailFragment"
         tools:layout="@layout/fragment_challenge_detail"
-        android:label="Desafio" />
+        android:label="Desafio" >
+        <argument
+            android:name="formulaId"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/challengeListFragment"
         android:name="com.produtos.montaveis.ui.challenges.ChallengeListFragment"
