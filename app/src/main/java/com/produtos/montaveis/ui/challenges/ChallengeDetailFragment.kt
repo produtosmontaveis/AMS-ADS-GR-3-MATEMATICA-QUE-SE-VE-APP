@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.produtos.montaveis.databinding.FragmentChallengeDetailBinding
-import com.produtos.montaveis.model.Challenge
 
 class ChallengeDetailFragment : Fragment() {
 
@@ -16,8 +15,6 @@ class ChallengeDetailFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: ChallengeViewModel by activityViewModels()
-
-    private lateinit var challenge: Challenge
 
     private var formulaId: Int = 0
 

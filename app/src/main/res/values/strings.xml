@@ -24,4 +24,5 @@
     <string name="badge5">Soma de cubos</string>
     <string name="badge6">Cubo da diferença</string>
     <string name="badge7">Diferença de cubos</string>
+    <string name="not_in_classroom">Digite o código da sala</string>
 </resources>

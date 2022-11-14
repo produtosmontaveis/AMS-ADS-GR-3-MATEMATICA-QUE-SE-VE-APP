@@ -35,11 +35,11 @@ class BadgeAdapter : ListAdapter<Badge, BadgeAdapter.BadgeViewHolder>(DiffCallba
 
     companion object DiffCallback : DiffUtil.ItemCallback<Badge>() {
         override fun areItemsTheSame(oldItem: Badge, newItem: Badge): Boolean {
-            return oldItem.name == newItem.name
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: Badge, newItem: Badge): Boolean {
-            return oldItem == newItem
+            return oldItem.name == newItem.name
         }
     }
 }

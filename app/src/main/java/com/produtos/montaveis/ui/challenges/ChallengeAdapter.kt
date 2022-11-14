@@ -36,9 +36,10 @@ class ChallengeAdapter(private val clickListener: ChallengeListener) :
         val challenge = getItem(position)
         holder.bind(clickListener, challenge)
         holder.itemView.setOnClickListener {
-            val action = ChallengeListFragmentDirections
-                .actionChallengeListFragmentToChallengeDetailFragment(formulaId = challenge.formula.id)
-                holder.itemView.findNavController().navigate(action)
+            val action =
+                ChallengeListFragmentDirections
+                    .actionChallengeListFragmentToChallengeDetailFragment(formulaId = challenge.formula.id)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 

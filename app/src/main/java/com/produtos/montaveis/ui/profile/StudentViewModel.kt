@@ -21,31 +21,31 @@ class StudentViewModel : ViewModel() {
     val badges: LiveData<List<Badge>> = _badges
 
     init {
-        getStudent()
+        getProfileData()
         determineStudentRank()
     }
 
-    private fun getStudent() {
+    private fun getProfileData() {
         viewModelScope.launch {
             try {
                 _student.value = StudentApi.retrofitService.getStudent(1)
+
+                val badgesList = mutableListOf<Badge>()
+
+                _student.value?.challenges?.forEach {
+                    badgesList.add(
+                        Badge(
+                            it.formula.id,
+                            it.formula.name,
+                            it.formula.badgeImageUrl,
+                            it.progressStatus == 100.0
+                        )
+                    )
+                }
+                badgesList.sortBy { it.id }
+                _badges.value = badgesList
             } catch (_: Exception) {}
         }
-    }
-
-    fun updateBadges() {
-        val badgesList = mutableListOf<Badge>()
-
-        _student.value?.challenges?.forEach {
-            badgesList.add(
-                Badge(
-                    it.formula.name,
-                    it.formula.badgeImageUrl,
-                    it.progressStatus == 100.0
-                )
-            )
-        }
-        _badges.value = badgesList
     }
 
     private fun determineStudentRank() {
@@ -56,7 +56,8 @@ class StudentViewModel : ViewModel() {
             3 -> "Experiente"
             4 -> "Talentoso"
             5 -> "Proeficiente"
-            else -> "Mestre"
+            6 -> "Mestre"
+            else -> "Novato"
         }
     }
 }

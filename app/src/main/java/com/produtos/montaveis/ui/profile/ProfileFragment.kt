@@ -32,8 +32,6 @@ class ProfileFragment : Fragment() {
 
         binding.badgesRecyclerView.adapter = adapter
 
-        viewModel.updateBadges()
-
         viewModel.badges.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
