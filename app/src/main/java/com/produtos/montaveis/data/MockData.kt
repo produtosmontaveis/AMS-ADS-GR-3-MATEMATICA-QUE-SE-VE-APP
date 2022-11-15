@@ -6,7 +6,7 @@ import com.produtos.montaveis.model.Student
 
 object MockData {
 
-    val student = Student(
+    var student = Student(
         1, "Gustavo", 0, 40, mutableListOf(
             Challenge(
                 Formula(
@@ -27,7 +27,7 @@ object MockData {
                     badgeImageUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
                 ),
 
-                100.0
+                0.0
             ),
             Challenge(
                 Formula(

@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.model.Badge
 import com.produtos.montaveis.model.Student
-import com.produtos.montaveis.network.StudentApi
 import kotlinx.coroutines.launch
 
 class StudentViewModel : ViewModel() {
@@ -22,30 +22,34 @@ class StudentViewModel : ViewModel() {
 
     init {
         getProfileData()
-        determineStudentRank()
     }
 
     private fun getProfileData() {
         viewModelScope.launch {
             try {
-                _student.value = StudentApi.retrofitService.getStudent(1)
-
-                val badgesList = mutableListOf<Badge>()
-
-                _student.value?.challenges?.forEach {
-                    badgesList.add(
-                        Badge(
-                            it.formula.id,
-                            it.formula.name,
-                            it.formula.badgeImageUrl,
-                            it.progressStatus == 100.0
-                        )
-                    )
-                }
-                badgesList.sortBy { it.id }
-                _badges.value = badgesList
+//                _student.value = StudentApi.retrofitService.getStudent(1)
+                _student.value = MockData.student
+                getBadges()
+                determineStudentRank()
             } catch (_: Exception) {}
         }
+    }
+
+    private fun getBadges() {
+        val badgesList = mutableListOf<Badge>()
+
+        _student.value?.challenges?.forEach {
+            badgesList.add(
+                Badge(
+                    it.formula.id,
+                    it.formula.name,
+                    it.formula.badgeImageUrl,
+                    it.progressStatus == 100.0
+                )
+            )
+        }
+        badgesList.sortBy { it.id }
+        _badges.value = badgesList
     }
 
     private fun determineStudentRank() {

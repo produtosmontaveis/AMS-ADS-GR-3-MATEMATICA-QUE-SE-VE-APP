@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/challenge_graph"
-    app:startDestination="@id/challengeListFragment">
+    app:startDestination="@+id/challengeListFragment">
 
     <fragment
         android:id="@+id/challengeDetailFragment"
@@ -13,6 +13,9 @@
         <argument
             android:name="formulaId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_challengeDetailFragment_to_challengeListFragment"
+            app:destination="@id/challengeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/challengeListFragment"
@@ -21,6 +24,7 @@
         tools:layout="@layout/fragment_challenge_list" >
         <action
             android:id="@+id/action_challengeListFragment_to_challengeDetailFragment"
-            app:destination="@id/challengeDetailFragment" />
+            app:destination="@id/challengeDetailFragment"
+            app:launchSingleTop="false" />
     </fragment>
 </navigation>
