@@ -19,10 +19,10 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:layout_gravity="end"
-            android:src="@drawable/ic_notification"
-            android:contentDescription="@string/exercises" />
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/exercises"
+            android:src="@drawable/ic_notification" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -31,8 +31,8 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/layout_background"
         android:layout_marginTop="4dp"
+        android:background="@drawable/layout_background"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,8 +66,8 @@
             android:id="@+id/exercises_on_progress_bar"
             android:layout_width="0dp"
             android:layout_height="2dp"
-            android:background="?attr/colorPrimary"
             android:layout_marginTop="2dp"
+            android:background="?attr/colorPrimary"
             app:layout_constraintEnd_toEndOf="@+id/exercises_on_progress_label"
             app:layout_constraintStart_toStartOf="@+id/exercises_on_progress_label"
             app:layout_constraintTop_toBottomOf="@+id/exercises_on_progress_label" />
@@ -88,20 +88,21 @@
             android:id="@+id/exercises_done_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="96dp"
             android:gravity="center"
+            android:minWidth="96dp"
             android:text="@string/completed"
             app:drawableTopCompat="@drawable/ic_homework_done"
             app:layout_constraintBaseline_toBaselineOf="@+id/exercises_on_progress_label"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/exercises_on_progress_label" />
+            app:layout_constraintStart_toEndOf="@+id/exercises_on_progress_label"
+            tools:ignore="TextContrastCheck" />
 
         <View
             android:id="@+id/exercises_done_bar"
             android:layout_width="0dp"
             android:layout_height="2dp"
-            android:background="?attr/colorPrimary"
             android:layout_marginTop="2dp"
+            android:background="?attr/colorPrimary"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/exercises_done_label"
             app:layout_constraintStart_toStartOf="@+id/exercises_done_label"
@@ -124,14 +125,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/no_assignments"
         android:drawablePadding="24dp"
         android:gravity="center"
+        android:text="@string/no_assignments"
+        app:drawableTopCompat="@drawable/ic_no_assignments"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:drawableTopCompat="@drawable/ic_no_assignments" />
+        tools:ignore="TextContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_exercises_on_progress"
@@ -139,13 +141,13 @@
         android:layout_height="0dp"
         android:padding="8dp"
         android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="7"
-        tools:listitem="@layout/badge_item"  />
+        tools:listitem="@layout/badge_item" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_exercises_done"
@@ -153,13 +155,13 @@
         android:layout_height="0dp"
         android:padding="8dp"
         android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="7"
-        tools:listitem="@layout/badge_item"  />
+        tools:listitem="@layout/badge_item" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

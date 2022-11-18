@@ -1,8 +1,6 @@
 package com.produtos.montaveis.data
 
-import com.produtos.montaveis.model.Challenge
-import com.produtos.montaveis.model.Formula
-import com.produtos.montaveis.model.Student
+import com.produtos.montaveis.model.*
 
 object MockData {
 
@@ -75,5 +73,80 @@ object MockData {
                 0.0,
             )
         )
+    )
+
+    val exercises = listOf(
+        Exercise(
+            1,
+            "Exercício 1",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra.",
+            "A",
+            100
+        ),
+        Exercise(
+            2,
+            "Exercício 2",
+            "Consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra.",
+            "A",
+            200
+        ),
+        Exercise(
+            3,
+            "Exercício 3",
+            "Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra, lorem ipsum dolor sit amet",
+            "C",
+            150
+        ),
+        Exercise(
+            4,
+            "Exercício 4",
+            "Suspendisse ornare odio pharetra, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus.",
+            "E",
+            100
+        ),
+        Exercise(
+            5,
+            "Exercício 5",
+            "Sed tincidunt purus id nibh ornare luctus, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra",
+            "E",
+            200
+        ),
+        Exercise(
+            6,
+            "Exercício 6",
+            "Ullamcorper volutpat mauris. Suspendisse ornare odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra",
+            "B",
+            100
+        ),
+        Exercise(
+            7,
+            "Exercício 7",
+            "Tincidunt purus id nibh ornare luctus. Suspendisse lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Suspendisse ornare odio pharetra",
+            "D",
+            150
+        ),
+    )
+
+    val studentExercises = listOf(
+        ExerciseResponse(1,
+        1,
+        "B",
+            "2022-11-11T12:52:45.792601Z"
+        ),
+        ExerciseResponse(1,
+        1,
+        "B",
+            "2022-11-11T14:52:45.792601Z"
+        ),
+        ExerciseResponse(1,
+        1,
+        "B",
+            "2022-11-11T15:22:45.792601Z"
+        ),
+        ExerciseResponse(1,
+        1,
+        "B",
+            "2022-12-11T08:52:45.792601Z"
+        ),
     )
 }
