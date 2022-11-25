@@ -55,8 +55,6 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="@string/on_progress"
-            android:textColor="?attr/colorPrimary"
-            android:textStyle="bold"
             app:drawableTopCompat="@drawable/ic_homework_on_progress"
             app:layout_constraintEnd_toStartOf="@+id/exercises_done_label"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +66,7 @@
             android:layout_height="2dp"
             android:layout_marginTop="2dp"
             android:background="?attr/colorPrimary"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/exercises_on_progress_label"
             app:layout_constraintStart_toStartOf="@+id/exercises_on_progress_label"
             app:layout_constraintTop_toBottomOf="@+id/exercises_on_progress_label" />
@@ -92,6 +91,8 @@
             android:minWidth="96dp"
             android:text="@string/completed"
             app:drawableTopCompat="@drawable/ic_homework_done"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/exercises_on_progress_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/exercises_on_progress_label"
@@ -103,7 +104,7 @@
             android:layout_height="2dp"
             android:layout_marginTop="2dp"
             android:background="?attr/colorPrimary"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="@+id/exercises_done_label"
             app:layout_constraintStart_toStartOf="@+id/exercises_done_label"
             app:layout_constraintTop_toBottomOf="@+id/exercises_done_label" />
@@ -128,6 +129,7 @@
         android:drawablePadding="24dp"
         android:gravity="center"
         android:text="@string/no_assignments"
+        android:visibility="gone"
         app:drawableTopCompat="@drawable/ic_no_assignments"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,32 +138,18 @@
         tools:ignore="TextContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_exercises_on_progress"
+        android:id="@+id/rv_exercises"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:itemCount="7"
-        tools:listitem="@layout/badge_item" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_exercises_done"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="8dp"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:itemCount="7"
-        tools:listitem="@layout/badge_item" />
+        tools:listitem="@layout/exercise_item" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

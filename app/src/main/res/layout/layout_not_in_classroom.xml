@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/layout_background">
+    android:background="@drawable/layout_background_radius">
 
     <TextView
         style="@style/TextAppearance.MaterialComponents.Headline6"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:endIconMode="custom"
-        app:endIconDrawable="@drawable/ic_send"
+        app:endIconDrawable="@drawable/ic_submit"
         app:endIconTint="?attr/colorPrimary"
         android:hint="@string/classroom_code">
 

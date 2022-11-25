@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/layout_background">
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp"
+    android:background="@drawable/layout_background_radius">
 
     <TextView
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/not_verified"/>
 
     <TextView
@@ -26,6 +28,6 @@
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:layout_marginTop="8dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="end"/>
 
 </LinearLayout>

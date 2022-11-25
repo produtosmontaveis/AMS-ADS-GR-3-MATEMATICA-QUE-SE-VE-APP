@@ -14,8 +14,8 @@ object MockData {
                     badgeImageUrl = "https://raw.githubusercontent.com/produtosmontaveis/produtosmontaveis.github.io/main/assets/images/960.jpg"
                 ),
                 progressStatus = 0.0,
-                startDateTime = null,
-                finishDateTime = null
+                startDateTime = "2022-11-11T14:38:19.149099Z",
+                finishDateTime = "2022-11-11T18:25:44.843539Z"
             ),
             Challenge(
                 Formula(

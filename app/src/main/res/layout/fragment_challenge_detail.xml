@@ -15,31 +15,39 @@
         android:layout_height="match_parent"
         tools:context=".ui.challenges.ChallengeDetailFragment">
 
-
-        <TextView
-            android:id="@+id/challenge_name"
-            style="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@{viewModel.challenge.formula.name}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Quadrado da soma" />
-
-        <ImageView
-            android:id="@+id/challenge_image"
-            imageUrl="@{viewModel.challenge.formula.imgUrl}"
+        <LinearLayout
+            android:id="@+id/frameLayout"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="8dp"
-            android:importantForAccessibility="no"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_classroom"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/layout_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/challenge_name" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/challenge_name"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.challenge.formula.name}"
+                tools:text="Quadrado da soma" />
+
+            <ImageView
+                android:id="@+id/challenge_image"
+                imageUrl="@{viewModel.challenge.formula.imgUrl}"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_classroom"
+                android:contentDescription="@{viewModel.challenge.formula.name}" />
+
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/progress_status"
@@ -49,7 +57,7 @@
             android:text="@{@string/progress_status(viewModel.challenge.progressStatus)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/challenge_image"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
             tools:text="Progresso: 75%" />
 
         <TextView
