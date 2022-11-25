@@ -5,12 +5,12 @@ data class Exercise(
     val title: String,
     val description: String,
     val answer: String,
-    val points: Int
+    val points: Int,
+    val response: ExerciseResponse? = null
 )
 
 data class ExerciseResponse(
     val studentId: Long,
-    val exerciseId: Long,
     val studentAnswer: String,
     val finishDate: String
 )

@@ -81,7 +81,11 @@ object MockData {
             "Exercício 1",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra.",
             "A",
-            100
+            100,
+            ExerciseResponse(1,
+                "B",
+                "2022-11-11T12:52:45.792601Z"
+            ),
         ),
         Exercise(
             2,
@@ -95,14 +99,22 @@ object MockData {
             "Exercício 3",
             "Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra, lorem ipsum dolor sit amet",
             "C",
-            150
+            150,
+            ExerciseResponse(1,
+                "B",
+                "2022-11-11T14:52:45.792601Z"
+            ),
         ),
         Exercise(
             4,
             "Exercício 4",
             "Suspendisse ornare odio pharetra, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus.",
             "E",
-            100
+            100,
+            ExerciseResponse(1,
+                "B",
+                "2022-12-11T08:52:45.792601Z"
+            ),
         ),
         Exercise(
             5,
@@ -116,7 +128,11 @@ object MockData {
             "Exercício 6",
             "Ullamcorper volutpat mauris. Suspendisse ornare odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra",
             "B",
-            100
+            100,
+            ExerciseResponse(1,
+                "B",
+                "2022-11-11T15:22:45.792601Z"
+            ),
         ),
         Exercise(
             7,
@@ -124,29 +140,6 @@ object MockData {
             "Tincidunt purus id nibh ornare luctus. Suspendisse lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Suspendisse ornare odio pharetra",
             "D",
             150
-        ),
-    )
-
-    val studentExercises = listOf(
-        ExerciseResponse(1,
-        1,
-        "B",
-            "2022-11-11T12:52:45.792601Z"
-        ),
-        ExerciseResponse(1,
-        1,
-        "B",
-            "2022-11-11T14:52:45.792601Z"
-        ),
-        ExerciseResponse(1,
-        1,
-        "B",
-            "2022-11-11T15:22:45.792601Z"
-        ),
-        ExerciseResponse(1,
-        1,
-        "B",
-            "2022-12-11T08:52:45.792601Z"
         ),
     )
 }

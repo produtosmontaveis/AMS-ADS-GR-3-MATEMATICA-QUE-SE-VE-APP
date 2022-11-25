@@ -7,6 +7,8 @@
         <variable
             name="exercise"
             type="com.produtos.montaveis.model.Exercise" />
+
+        <import type="android.view.View" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -26,6 +28,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:text="@{exercise.title}"
                 tools:text="Exercício 1" />
 
             <TextView
@@ -36,6 +39,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:visibility="@{exercise.response != null ? View.VISIBLE : View.INVISIBLE}"
+                android:text="@{@string/total_points(exercise.points)}"
                 tools:text="50/50 points" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

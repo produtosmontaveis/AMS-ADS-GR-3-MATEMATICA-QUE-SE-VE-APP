@@ -13,8 +13,7 @@
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Oi, Aluno">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -49,11 +48,10 @@
 
         <TextView
             android:id="@+id/exercises_on_progress_label"
+            style="@style/Widget.ProdutosMontaveis.TextViewFocused"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:gravity="center"
             android:text="@string/on_progress"
             app:drawableTopCompat="@drawable/ic_homework_on_progress"
             app:layout_constraintEnd_toStartOf="@+id/exercises_done_label"
@@ -66,7 +64,7 @@
             android:layout_height="2dp"
             android:layout_marginTop="2dp"
             android:background="?attr/colorPrimary"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="@+id/exercises_on_progress_label"
             app:layout_constraintStart_toStartOf="@+id/exercises_on_progress_label"
             app:layout_constraintTop_toBottomOf="@+id/exercises_on_progress_label" />
@@ -91,8 +89,6 @@
             android:minWidth="96dp"
             android:text="@string/completed"
             app:drawableTopCompat="@drawable/ic_homework_done"
-            android:textColor="?attr/colorPrimary"
-            android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/exercises_on_progress_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/exercises_on_progress_label"
@@ -104,7 +100,7 @@
             android:layout_height="2dp"
             android:layout_marginTop="2dp"
             android:background="?attr/colorPrimary"
-            android:visibility="visible"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/exercises_done_label"
             app:layout_constraintStart_toStartOf="@+id/exercises_done_label"
             app:layout_constraintTop_toBottomOf="@+id/exercises_done_label" />
@@ -141,8 +137,6 @@
         android:id="@+id/rv_exercises"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="8dp"
-        android:visibility="visible"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

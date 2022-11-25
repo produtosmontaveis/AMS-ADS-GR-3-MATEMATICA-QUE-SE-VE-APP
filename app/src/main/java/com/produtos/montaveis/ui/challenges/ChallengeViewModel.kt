@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.model.Challenge
-import com.produtos.montaveis.network.ChallengeApi
 import kotlinx.coroutines.launch
 
 private const val TAG = "ChallengeViewModel"
@@ -32,8 +32,8 @@ class ChallengeViewModel : ViewModel() {
     private fun getChallenges() {
         viewModelScope.launch {
             try {
-                _challenges.value = ChallengeApi.retrofitService.getChallenges()
-//                _challenges.value = MockData.student.challenges.orEmpty()
+//                _challenges.value = ChallengeApi.retrofitService.getChallenges()
+                _challenges.value = MockData.student.challenges.orEmpty()
             } catch (e: Exception) {
                 Log.d(TAG, e.message.toString())
             }

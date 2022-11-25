@@ -33,4 +33,5 @@
     <string name="on_progress">Em andamento</string>
     <string name="completed">Concluído</string>
     <string name="no_assignments">Você não possui nenhum exercício no momento</string>
+    <string name="total_points">%d points</string>
 </resources>
