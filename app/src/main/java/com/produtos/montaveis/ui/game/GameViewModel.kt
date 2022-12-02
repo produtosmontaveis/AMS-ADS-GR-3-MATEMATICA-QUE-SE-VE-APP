@@ -52,6 +52,8 @@ class GameViewModel : ViewModel() {
             try {
                 _challenge.value?.formula?.id?.let { formulaId ->
                     MockData.student.challenges?.find { it.formula.id == formulaId }?.progressStatus = 100.0
+                    MockData.student.level++
+                    MockData.student.score += 100
                 //                    ChallengeApi.retrofitService.finishChallenge(formulaId)
                 }
             } catch (_: Exception) {}

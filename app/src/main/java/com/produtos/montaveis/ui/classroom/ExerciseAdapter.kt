@@ -31,6 +31,9 @@ class ExerciseAdapter(private val onExerciseClicked: (Exercise) -> Unit) : ListA
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val exercise = getItem(position)
         holder.bind(exercise)
+        if (exercise.studentAnswer != null) {
+            holder.itemView.isEnabled = false
+        }
         holder.itemView.setOnClickListener {
             onExerciseClicked(exercise)
         }

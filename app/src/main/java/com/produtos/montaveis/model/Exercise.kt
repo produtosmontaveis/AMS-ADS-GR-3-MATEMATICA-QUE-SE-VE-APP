@@ -8,11 +8,11 @@ data class Exercise(
     val points: Int,
     val imgUrl: String?,
     val options: List<String>?,
-    val response: ExerciseResponse? = null
+    var studentAnswer: StudentAnswer? = null
 )
 
-data class ExerciseResponse(
+data class StudentAnswer(
     val studentId: Long,
-    val studentAnswer: String,
+    val answer: String,
     val finishDate: String
 )
