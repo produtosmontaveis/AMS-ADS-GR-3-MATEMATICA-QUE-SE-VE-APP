@@ -5,7 +5,7 @@ import com.produtos.montaveis.model.*
 object MockData {
 
     var student = Student(
-        1, "Gustavo", 0, 40, mutableListOf(
+        1, "Aluno", 0, 40, mutableListOf(
             Challenge(
                 Formula(
                     1,
@@ -75,13 +75,15 @@ object MockData {
         )
     )
 
-    val exercises = listOf(
+    var exercises = listOf(
         Exercise(
             1,
             "Exercício 1",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra.",
             "A",
             100,
+            null,
+            listOf("A", "B", "C", "D"),
             ExerciseResponse(1,
                 "B",
                 "2022-11-11T12:52:45.792601Z"
@@ -92,7 +94,9 @@ object MockData {
             "Exercício 2",
             "Consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra.",
             "A",
-            200
+            200,
+            null,
+                    listOf("A", "B", "C", "D"),
         ),
         Exercise(
             3,
@@ -100,6 +104,8 @@ object MockData {
             "Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra, lorem ipsum dolor sit amet",
             "C",
             150,
+            null,
+            listOf("A", "B", "C", "D"),
             ExerciseResponse(1,
                 "B",
                 "2022-11-11T14:52:45.792601Z"
@@ -111,6 +117,8 @@ object MockData {
             "Suspendisse ornare odio pharetra, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus.",
             "E",
             100,
+            null,
+            listOf("A", "B", "C", "D"),
             ExerciseResponse(1,
                 "B",
                 "2022-12-11T08:52:45.792601Z"
@@ -121,7 +129,9 @@ object MockData {
             "Exercício 5",
             "Sed tincidunt purus id nibh ornare luctus, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra",
             "E",
-            200
+            200,
+            null,
+            listOf("A", "B", "C", "D"),
         ),
         Exercise(
             6,
@@ -129,6 +139,8 @@ object MockData {
             "Ullamcorper volutpat mauris. Suspendisse ornare odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus. Suspendisse ornare odio pharetra",
             "B",
             100,
+            null,
+            listOf("A", "B", "C", "D"),
             ExerciseResponse(1,
                 "B",
                 "2022-11-11T15:22:45.792601Z"
@@ -139,7 +151,9 @@ object MockData {
             "Exercício 7",
             "Tincidunt purus id nibh ornare luctus. Suspendisse lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Suspendisse ornare odio pharetra",
             "D",
-            150
+            150,
+            null,
+            listOf("A", "B", "C", "D"),
         ),
     )
 }

@@ -11,6 +11,9 @@ class ClassroomViewModel : ViewModel() {
     private val _exercises = MutableLiveData<List<Exercise>>()
     val exercises: LiveData<List<Exercise>> = _exercises
 
+    private val _exercise = MutableLiveData<Exercise>()
+    val exercise: LiveData<Exercise> = _exercise
+
     init {
         getExercises()
     }
@@ -25,5 +28,9 @@ class ClassroomViewModel : ViewModel() {
 
     fun getExercisesDone(): List<Exercise>? {
         return _exercises.value?.filter { it.response != null }
+    }
+
+    fun setExercise(exercise: Exercise) {
+        _exercise.value = exercise
     }
 }

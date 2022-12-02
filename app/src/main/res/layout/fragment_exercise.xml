@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.produtos.montaveis.ui.classroom.ClassroomViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        tools:context=".ui.classroom.ExerciseFragment">
+
+
+        <TextView
+            android:id="@+id/exercise_title"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.exercise.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/completed" />
+
+        <ImageView
+            android:id="@+id/exercise_image"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/exercises"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise_title"
+            tools:src="@drawable/ic_medal" />
+
+        <TextView
+            android:id="@+id/exercise_description"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{viewModel.exercise.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise_image"
+            tools:text="Suspendisse ornare odio pharetra, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper volutpat mauris. Sed tincidunt purus id nibh ornare luctus." />
+
+        <RadioGroup
+            android:id="@+id/exercise_response_options"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/exercise_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise_description">
+
+            <RadioButton
+                android:id="@+id/first_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.exercise.options[0]}"
+                tools:text="Praesent ullamcorper volutpat" />
+
+            <RadioButton
+                android:id="@+id/second_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.exercise.options[1]}"
+                tools:text="Suspendisse ornare pharetra" />
+
+            <RadioButton
+                android:id="@+id/third_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.exercise.options[2]}"
+                tools:text="Consectetur adipiscing elit" />
+
+            <RadioButton
+                android:id="@+id/fourth_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.exercise.options[3]}"
+                tools:text="Sed tincidunt purus" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/answer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/exercise_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -34,4 +34,7 @@
     <string name="completed">Concluído</string>
     <string name="no_assignments">Você não possui nenhum exercício no momento</string>
     <string name="total_points">%d points</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="answer">Responder</string>
 </resources>

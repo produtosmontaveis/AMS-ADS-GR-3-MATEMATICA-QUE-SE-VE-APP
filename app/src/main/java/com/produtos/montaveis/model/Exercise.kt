@@ -6,6 +6,8 @@ data class Exercise(
     val description: String,
     val answer: String,
     val points: Int,
+    val imgUrl: String?,
+    val options: List<String>?,
     val response: ExerciseResponse? = null
 )
 

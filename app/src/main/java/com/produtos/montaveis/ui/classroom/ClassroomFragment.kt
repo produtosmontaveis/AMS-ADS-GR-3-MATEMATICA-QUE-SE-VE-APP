@@ -28,7 +28,9 @@ class ClassroomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ExerciseAdapter()
+        val adapter = ExerciseAdapter {
+            viewModel.setExercise(it)
+        }
         binding.rvExercises.adapter = adapter
 
         binding.toolbar.title = "Oi, ${MockData.student.name}"
@@ -54,5 +56,10 @@ class ClassroomFragment : Fragment() {
             binding.exercisesOnProgressLabel.setTextAppearance(R.style.Widget_ProdutosMontaveis_TextViewUnfocused)
             binding.exercisesDoneLabel.setTextAppearance(R.style.Widget_ProdutosMontaveis_TextViewFocused)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

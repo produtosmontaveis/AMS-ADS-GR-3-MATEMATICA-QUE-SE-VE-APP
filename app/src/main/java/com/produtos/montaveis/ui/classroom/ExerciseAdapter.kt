@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.produtos.montaveis.databinding.ExerciseItemBinding
 import com.produtos.montaveis.model.Exercise
 
-class ExerciseAdapter : ListAdapter<Exercise, ExerciseAdapter.ExerciseViewHolder>(DiffCallback) {
+class ExerciseAdapter(private val onExerciseClicked: (Exercise) -> Unit) : ListAdapter<Exercise, ExerciseAdapter.ExerciseViewHolder>(DiffCallback) {
 
     class ExerciseViewHolder(private var binding: ExerciseItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
