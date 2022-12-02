@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/classroom_graph"
+    app:startDestination="@id/classroomFragment">
+
+    <fragment
+        android:id="@+id/classroomFragment"
+        android:name="com.produtos.montaveis.ui.classroom.ClassroomFragment"
+        android:label="@string/classroom"
+        tools:layout="@layout/fragment_classroom" >
+        <action
+            android:id="@+id/action_classroomFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.produtos.montaveis.ui.classroom.ExerciseFragment"
+        android:label="@string/exercises" />
+</navigation>

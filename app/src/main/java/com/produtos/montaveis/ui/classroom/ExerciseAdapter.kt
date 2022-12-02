@@ -31,6 +31,9 @@ class ExerciseAdapter(private val onExerciseClicked: (Exercise) -> Unit) : ListA
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val exercise = getItem(position)
         holder.bind(exercise)
+        holder.itemView.setOnClickListener {
+            onExerciseClicked(exercise)
+        }
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Exercise>() {

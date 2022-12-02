@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.produtos.montaveis.R
 import com.produtos.montaveis.data.MockData
 import com.produtos.montaveis.databinding.FragmentClassroomBinding
@@ -30,6 +31,8 @@ class ClassroomFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val adapter = ExerciseAdapter {
             viewModel.setExercise(it)
+            val action = ClassroomFragmentDirections.actionClassroomFragmentToExerciseFragment()
+            findNavController().navigate(action)
         }
         binding.rvExercises.adapter = adapter
 

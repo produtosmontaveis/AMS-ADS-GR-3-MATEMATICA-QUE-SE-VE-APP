@@ -7,7 +7,7 @@
         android:icon="@drawable/icon_home"
         android:title="@string/challenge" />
 
-    <item android:id="@+id/classroomFragment"
+    <item android:id="@+id/classroom_graph"
         android:enabled="true"
         android:icon="@drawable/ic_classroom"
         android:title="@string/classroom" />
